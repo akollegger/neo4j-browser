@@ -1,8 +1,10 @@
-color-success = #70E9B1
-color-error = #E74C3C
-color-warning = #ebf094
-color-warning-on-white = #FFA500
-color-link = #428BCA
+@import 'palette'
+
+color-success = palette('Teal', 'A400') // #70E9B1
+color-error = palette('Red', '600') // #E74C3C
+color-warning = palette('Yellow', 'A100') // #ebf094
+color-warning-on-white = palette('Orange', '500') // #FFA500
+color-link = palette('Blue', 'A200') // #428BCA
 color-link-hover = #5dade2
 color-default-text = #788185
 color-star = #FDCC59
@@ -28,7 +30,7 @@ frame-left-menu-width = 60px
 frame-left-menu-hanging-lid-width = 15px
 frame-min-height = 290px
 
-drawer-color-bg = #30333A
+drawer-color-bg = palette('Grey', '900') // #30333A
 drawer-color-bg-active = lighten(drawer-color-bg, 4%)
 drawer-color-border = lighten(drawer-color-bg, 10%)
 drawer-color-fg = #BCC0C9

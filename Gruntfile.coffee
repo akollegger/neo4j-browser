@@ -233,7 +233,7 @@ module.exports = (grunt) ->
             '<%= yeoman.app %>/styles/themes/*.styl'
           ]
       options:
-        paths: ["<%= yeoman.app %>/vendor/foundation", "<%= yeoman.app %>/images"]
+        paths: ["<%= yeoman.app %>/images", "<%= yeoman.app %>/components/google-material-color/dist/"]
 
     jade:
       index:
