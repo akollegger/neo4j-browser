@@ -21,7 +21,7 @@
 import Guides from '../Guides/Guides'
 import * as html from '../Guides/html'
 import FrameTemplate from './FrameTemplate'
-
+import Handlebars from 'handlebars/dist/handlebars'
 
 const PlayFrame = ({frame}) => {
   let guide = 'Play guide not specified'
