@@ -85,7 +85,7 @@ export default class Guides extends Component {
     }
     if (this.props.withDirectives) {
       return (
-        <Directives content={<Slide html={this.props.html} />} />
+        <Directives content={<Slide html={this.props.html(this.props.context)} />} />
       )
     } else {
       return (

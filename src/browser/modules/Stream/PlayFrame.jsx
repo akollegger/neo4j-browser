@@ -22,16 +22,25 @@ import Guides from '../Guides/Guides'
 import * as html from '../Guides/html'
 import FrameTemplate from './FrameTemplate'
 
+
 const PlayFrame = ({frame}) => {
   let guide = 'Play guide not specified'
+
+  const context = {
+    neo4j: {
+      version: '3.2-RC1',
+      edition: 'Community'
+    }
+  }
+
   if (frame.result) {
     guide = <Guides withDirectives html={frame.result} />
   } else {
     const guideName = frame.cmd.replace(':play', '').replace(/\s|-/g, '').trim()
     if (guideName !== '') {
-      const content = html[guideName]
+      const content = Handlebars.compile(html[guideName])
       if (content !== undefined) {
-        guide = <Guides withDirectives html={content} />
+        guide = <Guides withDirectives html={content} context={context} />
       } else {
         if (frame.error && frame.error.error) {
           guide = frame.error.error
