@@ -54,10 +54,6 @@ const plugins = [
     {
       from: path.resolve('./src/browser/external/neoPlanner.js'),
       to: assetsPath + '/js'
-    },
-    {
-      from: path.resolve('./src/browser/external/handlebars.min.js'),
-      to: assetsPath + '/js'
     }
   ]),
   new webpack.NormalModuleReplacementPlugin(/\/iconv-loader$/, 'node-noop'),
