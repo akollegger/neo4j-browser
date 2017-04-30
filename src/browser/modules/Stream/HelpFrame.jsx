@@ -22,6 +22,7 @@ import Slide from '../Guides/Slide'
 import * as html from '../Help/html'
 import Directives from 'browser-components/Directives'
 import FrameTemplate from './FrameTemplate'
+import Handlebars from 'handlebars/dist/handlebars'
 
 const HelpFrame = ({frame}) => {
   const snakeToCamel = (string) => string.replace(/(-\w)/g, (match) => { return match[1].toUpperCase() })
@@ -32,7 +33,7 @@ const HelpFrame = ({frame}) => {
   } else {
     const helpTopic = snakeToCamel('_' + frame.cmd.replace(':help', '').trim().toLowerCase())
     if (helpTopic !== '') {
-      const content = html.default[helpTopic]
+      const content = Handlebars.compile(html.default[helpTopic])
       if (content !== undefined) {
         help = <Slide html={content} />
       } else {
