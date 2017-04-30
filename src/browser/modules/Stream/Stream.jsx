@@ -42,6 +42,13 @@ import { getFrames, setRecentView, getRecentView } from 'shared/modules/stream/s
 import { getRequests } from 'shared/modules/requests/requestsDuck'
 import { getActiveConnectionData } from 'shared/modules/connections/connectionsDuck'
 import QueriesFrame from './Queries/QueriesFrame'
+import Handlebars from 'handlebars/dist/handlebars'
+
+// ABK: this probably belongs somewhere else. where?
+Handlebars.registerHelper('neo4jDeveloperDoc', function(version, path) {
+  console.log(version, path)
+  return "https://neo4j.com/docs/developer-manual/"+ version + "/" + path
+});
 
 const getFrame = (type) => {
   const trans = {

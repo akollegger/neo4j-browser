@@ -33,6 +33,7 @@ const PlayFrame = ({frame}) => {
     }
   }
 
+
   if (frame.result) {
     guide = <Guides withDirectives html={frame.result} />
   } else {
